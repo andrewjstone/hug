@@ -1,5 +1,5 @@
 var assert = require('assert');
-var instrument = require('../instrument');
+var hug = require('../hug');
 
 var asyncFunction = function(callback) {
   callback();
@@ -21,7 +21,7 @@ var after = function(start, duration) {
 describe('Instrument API', function() {
   var newFunction = null;
   it('wrap a synchronous function with before and after functions', function() {
-    newFunction = instrument(syncFunction, null, before, after);
+    newFunction = hug(syncFunction, null, before, after);
     assert.notEqual(newFunction, syncFunction);
   });
 
@@ -32,7 +32,7 @@ describe('Instrument API', function() {
   });
 
   it('wrap an asynchronous function with before and after functions', function() {
-    newFunction = instrument(asyncFunction, null, before, after);
+    newFunction = hug(asyncFunction, null, before, after);
     assert.notEqual(newFunction, asyncFunction);
   });
 

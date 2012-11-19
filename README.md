@@ -1,6 +1,6 @@
 Wrap functions with before and after functions in order to perform measurements. This code is written to work using node callback style and assumes that if the last argument passed to a function is a function, then it is a callback function and the wrapped function is an asynchronous function.
 
-    var instrument = require('instrument');
+    var hug = require('hug');
     var runCount = 0;
 
     var after = function(start, duration) {
@@ -12,11 +12,12 @@ Wrap functions with before and after functions in order to perform measurements.
       callback();
     }
 
-    var wrapped = instrument(someAsyncFunction, null, null, after);
+    var wrapped = hug(someAsyncFunction, null, null, after);
     wrapped(function() {});
 
 # API
-### instrument(fun, context, before, after)
+### hug(fun, context, before, after)
+Returns a wrapped function
 
   * ***fun*** - the function to wrap
   * ***context*** - the execution context (this)
@@ -31,5 +32,5 @@ Note that while the ***after*** function is called after the wrapped function, i
 
     // install mocha
     npm install mocha
-    mocha --reporter spec test/instrument.js
+    mocha --reporter spec test/hug.js
 

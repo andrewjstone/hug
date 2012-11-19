@@ -1,8 +1,8 @@
 {
-  "name": "instrument",
+  "name": "hug",
   "version": "0.0.1",
-  "description": "Instrument functions with profiling wrappers",
-  "main": "instrument.js",
+  "description": "Wrap functions with before and after functions to observe system state",
+  "main": "hug.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

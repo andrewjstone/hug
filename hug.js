@@ -1,4 +1,4 @@
-var instrument = module.exports = function(fun, context, before, after) {
+var hug = module.exports = function(fun, context, before, after) {
   return function() {
     if (!arguments.length) return runSync(fun, [], context, before, after);
     var lastArg = arguments[arguments.length - 1];
