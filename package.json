@@ -1,0 +1,15 @@
+{
+  "name": "instrument",
+  "version": "0.0.1",
+  "description": "Instrument functions with profiling wrappers",
+  "main": "instrument.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "Andrew J. Stone",
+  "license": "MIT",
+  "dependencies": {
+    "riemann": "~0.4.0"
+  }
+}
