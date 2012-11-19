@@ -1,4 +1,4 @@
-Wrap functions with before and after functions in order to perform measurements. 
+Wrap functions with before and after functions in order to perform measurements. This code is written to work using node callback style and assumes that if the last argument passed to a function is a function, then it is a callback function and the wrapped function is an asynchronous function.
 
     var instrument = require('instrument');
     var runCount = 0;
@@ -26,3 +26,10 @@ Wrap functions with before and after functions in order to perform measurements.
     * duration is the execution time of the wrapped function in ms
 
 Note that while the ***after*** function is called after the wrapped function, it is called before the callback when an async function is wrapped.
+
+# RUN TESTS
+
+    // install mocha
+    npm install mocha
+    mocha --reporter spec test/instrument.js
+
